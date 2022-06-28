@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <h4>Hugh Unit Calculator</h4>
+        <br/>
+    </head>
+    <body>
+        <label>Height</label>
+        <input type="number" placeholder="Height" id="height"/>
+        <br/><br/>
+        <label>Weight</label>
+        <input type="number" placeholder="Weight" oninput="getHugh()" id="weight"/>
+        
+        <br/><br/>
+        <b>Haugh Unit: <span id="answer"></span></b>
+        
+        <script>
+            function getHugh(){
+                const height = parseFloat(document.getElementById('height').value);
+                const weight = parseFloat(document.getElementById('weight').value);
+                //console.log(height, weight);
+                const innerCalc = 100 * Math.log10((height + 7.57) - (1.7 * (weight ** 0.37)));
+                //const finalCalc =  100 * Math.log10(innerCalc);
+                document.getElementById('answer').innerHTML = innerCalc.toFixed(5);
+            }
+
+        </script>
+    </body>
+</html>
